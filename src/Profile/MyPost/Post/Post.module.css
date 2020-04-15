@@ -1,0 +1,34 @@
+.item {
+    width: 100%;
+    height: 80px;
+    display: grid;
+    margin: 0 auto;
+    grid-template-areas: "i t st";
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
+}
+
+.item img {
+    grid-area: i;
+    height: 50px;
+    width: 50px;
+    border-radius: 30px;
+}
+
+.text {
+    grid-area: t;
+    height: 60px;
+    width: 300px
+}
+
+.statistic {
+
+}
+
+.like {
+    color: green;
+}
+
+.dislike {
+    color: red;
+}
