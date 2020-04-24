@@ -81,8 +81,8 @@ function registerValidSW(swUrl, config) {
             } else {
               // At this point, everything has been precached.
               // It's the perfect time to display a
-              // "Profile is cached for offline use." message.
-              console.log('Profile is cached for offline use.');
+              // "ProfileInfo is cached for offline use." message.
+              console.log('ProfileInfo is cached for offline use.');
 
               // Execute callback
               if (config && config.onSuccess) {
