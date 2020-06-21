@@ -1,12 +1,21 @@
 .nav{
-    grid-area: n;
-    background-color: aliceblue;
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 180px;
 }
+.item{
+    padding-top: 10px;
+}
+
 .item a{
-    color: brown;
+    color:#000;
+    background: #e9ebee;
     text-decoration: none;
 }
 .item a.activeLink{
-    color: orange;
+    color:#000;
+    background-color: #F2F3F5;
+    border: 1px #000 solid;
+    font-weight: bold;
+    box-sizing: border-box;
 }

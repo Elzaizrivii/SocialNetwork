@@ -15,14 +15,14 @@ const App = () => {
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
-                <Navbar/>
-                <div className='app-wrapper-content'>
-                    <Route exact path='/Profile' component={Profile}/>
-                    <Route exact path='/Dialogs' component={Dialogs}/>
-                    <Route exact path='/News' component={News}/>
-                    <Route exact path='/Music' component={Music}/>
-                    <Route exact path='/Settings' component={Settings}/>
-                </div>
+                    <Navbar/>
+                    <div className='app-wrapper-content'>
+                        <Route exact path='/Profile' component={Profile}/>
+                        <Route exact path='/Dialogs' component={Dialogs}/>
+                        <Route exact path='/News' component={News}/>
+                        <Route exact path='/Music' component={Music}/>
+                        <Route exact path='/Settings' component={Settings}/>
+                    </div>
             </div>
         </BrowserRouter>
     );

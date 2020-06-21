@@ -1,11 +1,11 @@
 import React from "react";
-import classes from './Profile.module.css';
+import s from './Profile.module.css';
 import MyPost from "./MyPost/MyPost";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = () => {
     return (
-        <div>
+        <div className={s.container}>
             <ProfileInfo/>
             <MyPost />
         </div>

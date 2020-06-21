@@ -1,0 +1,28 @@
+.content {
+
+}
+
+.item {
+    padding: 10px;
+
+}
+.newPost{
+    display: flex;
+    justify-content: space-around;
+}
+textarea{
+    height: 50px;
+    width: 520px;
+}
+
+button {
+    border-radius: 5px;
+    height: 40px;
+    width: 100px;
+    background-color: #F2F3F5;
+    border: none;
+}
+
+button:hover {
+    background-color: #CCCCCC;
+}
