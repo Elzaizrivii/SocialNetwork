@@ -1,28 +1,29 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Header from './Header/Header';
-import Navbar from './Navbar/Navbar';
-import Profile from './Profile/Profile';
-import Music from './Music/Music';
+import Header from './Components/Header/Header';
+import Navbar from './Components/Navbar/Navbar';
+import Profile from './Components/Profile/Profile';
+import Music from './Components/Music/Music';
 import {BrowserRouter, Route} from 'react-router-dom';
-import Settings from "./Settings/Settings";
-import News from "./News/News";
-import Dialogs from "./Dialogs/Dialogs";
+import Settings from "./Components/Settings/Settings";
+import News from "./Components/News/News";
+import Dialogs from "./Components/Dialogs/Dialogs";
 
-const App = () => {
+const App = (props) => {
+
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
-                    <Navbar/>
-                    <div className='app-wrapper-content'>
-                        <Route exact path='/Profile' component={Profile}/>
-                        <Route exact path='/Dialogs' component={Dialogs}/>
-                        <Route exact path='/News' component={News}/>
-                        <Route exact path='/Music' component={Music}/>
-                        <Route exact path='/Settings' component={Settings}/>
-                    </div>
+                <Navbar/>
+                <div className='app-wrapper-content'>
+                    <Route exact path='/Profile' render={() => <Profile posts={props.posts}/>}/>
+                    <Route exact path='/Dialogs' render={() => <Dialogs dialogs={props.dialogs} messages={props.messages}/>}/>
+                    <Route exact path='/News' render={() => <News/>}/>
+                    <Route exact path='/Music' render={() => <Music/>}/>
+                    <Route exact path='/Settings' render={() => <Settings/>}/>
+                </div>
             </div>
         </BrowserRouter>
     );
