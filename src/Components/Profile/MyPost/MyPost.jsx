@@ -13,13 +13,20 @@ const MyPost = (props) => {
         />
     );
 
+    let newPostElement = React.createRef();
+
+    let addPost = () => {
+        let text = newPostElement.current.value;
+        alert(text);
+    };
+
     return (
         <div className={s.content}>
             <div className={s.newPost}>
-                <textarea title='Что у вас нового?' aria-label='Что у вас нового?' placeholder='Что у вас нового?'>
+                <textarea ref={newPostElement} title='Что у вас нового?' aria-label='Что у вас нового?' placeholder='Что у вас нового?'>
 
                 </textarea>
-                <button className={s.hover}>Отправить</button>
+                <button onClick={addPost}>Отправить</button>
             </div>
             <div className={s.item}>
                 {postsElement}

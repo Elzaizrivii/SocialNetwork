@@ -1,5 +1,43 @@
+.container{
+    display: flex;
+    background-color: #e9ebee;
+    padding-top: 10px;
+}
+.sidebar{
+    display: flex;
+    width: 230px;
+    height: 90px;
+    background-color: white;
+    border-radius: 5px;
+    flex-direction: column;
+    padding: 6px 0 6px 0;
+}
+.allMessage{
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #e9ebee;
+    height: 30px;
+}
+.notRead{
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #e9ebee;
+    height: 30px;
+
+}
+.important{
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #e9ebee;
+    height: 30px;
+}
+
 .dialogs {
     display: flex;
+    width: 500px;
+    margin-right: 10px;
+    background-color: white;
+    border-radius: 5px;
     height: 100vh;
 }
 .dialogs img{
@@ -30,4 +68,21 @@
 
 .message {
     display: flex;
+}
+
+textarea{
+    height: 50px;
+    width: 520px;
+}
+
+button {
+    border-radius: 5px;
+    height: 40px;
+    width: 100px;
+    background-color: #F2F3F5;
+    border: none;
+}
+
+button:hover {
+    background-color: #CCCCCC;
 }

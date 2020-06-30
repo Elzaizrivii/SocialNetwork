@@ -1,21 +1,27 @@
 .nav{
+    padding-top: 10px;
     display: flex;
     flex-direction: column;
     width: 180px;
 }
 .item{
-    padding-top: 10px;
+    margin-bottom: 1px;
+    width: 184px;
+    height: 28px;
+    font-family: inherit;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .item a{
-    color:#000;
+    color:#4d6da9;
     background: #e9ebee;
     text-decoration: none;
 }
 .item a.activeLink{
-    color:#000;
-    background-color: #F2F3F5;
-    border: 1px #000 solid;
+    font-family: inherit;
+    font-size: 14px;
     font-weight: bold;
-    box-sizing: border-box;
+    text-decoration: none;
 }
