@@ -4,24 +4,44 @@
 }
 
 .item {
-    padding: 10px;
-
+    padding-top: 10px;
+    border-radius: 10px;
 }
-.newPost{
+
+.newPost {
     display: flex;
-    justify-content: space-around;
-}
-textarea{
-    height: 50px;
-    width: 520px;
+    background-color: white;
+    align-items: center;
+    border-radius: 5px;
+    justify-content: space-between;
 }
 
-button {
-    border-radius: 5px;
-    height: 40px;
-    width: 100px;
+.avatar {
+    padding: 0 5px 0 5px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+.input {
+    min-height: 30px;
+    border: none;
+    font-style: inherit;
+    font-size: 12px;
+    color: grey;
+    width: auto;
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.button {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
     background-color: #F2F3F5;
     border: none;
+    margin: 0 5px 0 5px;
+    cursor: pointer;
 }
 
 button:hover {

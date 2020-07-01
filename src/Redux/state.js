@@ -1,12 +1,12 @@
 import React from "react";
+import {renderEnterTree} from "../render";
 
 let state = {
     profilePage: {
         posts: [
-            {id: 1, message: 'hello World', like: 22, dislike: 111},
-            {id: 2, message: 'norm', like: 32, dislike: 1},
-            {id: 3, message: 'norm', like: 2, dislike: 0},
-            {id: 4, message: 'insert', like: 6, dislike: 1},
+            {id: 1, message: 'hello World', likeCount: 22},
+            {id: 2, message: 'norm', likeCount: 32},
+            {id: 3, message: 'norm', likeCount: 2},
         ],
     },
     dialogPage: {
@@ -34,4 +34,16 @@ let state = {
         ],
     }
 };
+
+export let addPost = (postMessage) => {
+    let newPost = {
+        id: 5,
+        message: postMessage,
+        likeCount: 0
+    };
+
+    state.profilePage.posts.push(newPost);
+    renderEnterTree(state);
+};
+
 export default state;

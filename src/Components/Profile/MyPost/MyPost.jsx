@@ -9,7 +9,6 @@ const MyPost = (props) => {
             message={p.message}
             id={p.id}
             like={p.like}
-            dislike={p.dislike}
         />
     );
 
@@ -17,16 +16,20 @@ const MyPost = (props) => {
 
     let addPost = () => {
         let text = newPostElement.current.value;
-        alert(text);
+        props.addPost(text);
+        newPostElement.current.value = '';
     };
 
     return (
         <div className={s.content}>
             <div className={s.newPost}>
-                <textarea ref={newPostElement} title='Что у вас нового?' aria-label='Что у вас нового?' placeholder='Что у вас нового?'>
-
+                <img src='https://klike.net/uploads/posts/2019-06/1560664221_1.jpg' className={s.avatar}/>
+                <textarea className={s.input} ref={newPostElement} title='Что у вас нового?'
+                          aria-label='Что у вас нового?' placeholder='Что у вас нового?'>
                 </textarea>
-                <button onClick={addPost}>Отправить</button>
+                <button className={s.button} onClick={addPost}>
+                    <i className="fa fa-paper-plane-o" aria-hidden="true"> </i>
+                </button>
             </div>
             <div className={s.item}>
                 {postsElement}
