@@ -1,49 +1,68 @@
 import React from "react";
-import {renderEnterTree} from "../render";
 
-let state = {
-    profilePage: {
-        posts: [
-            {id: 1, message: 'hello World', likeCount: 22},
-            {id: 2, message: 'norm', likeCount: 32},
-            {id: 3, message: 'norm', likeCount: 2},
-        ],
+let store = {
+    _state: {
+        profilePage: {
+            posts: [
+                {id: 1, message: 'hello World', likeCount: 22},
+                {id: 2, message: 'norm', likeCount: 32},
+                {id: 3, message: 'norm', likeCount: 2},
+            ],
+            newPostText: ''
+        },
+        dialogPage: {
+            dialogs: [
+                {
+                    id: 1,
+                    name: "Пользователь 1",
+                    message: 'Спасибо)'
+                },
+                {
+                    id: 2,
+                    name: "Пользователь 2",
+                    message: 'Чувак когда дедлайн?'
+                },
+                {
+                    id: 3,
+                    name: "Пользователь 3",
+                    message: 'Как дела?'
+                }
+            ],
+            messages: [
+                {id: 1, message: "Hello"},
+                {id: 2, message: "Hi"},
+                {id: 3, message: "Yo"}
+            ],
+        }
     },
-    dialogPage: {
-        dialogs: [
-            {
-                id: 1,
-                name: "Temirhan",
-                avatar: "https://sun9-19.userapi.com/c846020/v846020311/109b75/pwDzEUZ9SQM.jpg?ava=1"
-            },
-            {
-                id: 2,
-                name: "Aliya",
-                avatar: "https://sun9-19.userapi.com/c846020/v846020311/109b75/pwDzEUZ9SQM.jpg?ava=1"
-            },
-            {
-                id: 2,
-                name: "Alihan",
-                avatar: "https://sun9-19.userapi.com/c846020/v846020311/109b75/pwDzEUZ9SQM.jpg?ava=1"
-            }
-        ],
-        messages: [
-            {id: 1, message: "Hello"},
-            {id: 2, message: "Hi"},
-            {id: 2, message: "Yo"}
-        ],
+
+    getState(){
+        return (this._state)
+    },
+
+    _callSubscriber() {
+        console.log('rerender');
+    },
+
+    addPost() {
+        let newPost = {
+            id: 5,
+            message: this._state.profilePage.newPostText,
+            likeCount: 0
+        };
+
+        this._state.profilePage.posts.push(newPost);
+        this._state.profilePage.newPostText = '';
+        this._callSubscriber(this._state);
+    },
+    updateNewPostChange(newText) {
+        this._state.profilePage.newPostText = (newText);
+        this._callSubscriber(this._state);
+    },
+    subscribe(observer) {
+        this._callSubscriber = observer;
     }
 };
 
-export let addPost = (postMessage) => {
-    let newPost = {
-        id: 5,
-        message: postMessage,
-        likeCount: 0
-    };
-
-    state.profilePage.posts.push(newPost);
-    renderEnterTree(state);
-};
-
-export default state;
+window.store=store;
+export default store;

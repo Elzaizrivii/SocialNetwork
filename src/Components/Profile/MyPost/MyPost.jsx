@@ -15,18 +15,22 @@ const MyPost = (props) => {
     let newPostElement = React.createRef();
 
     let addPost = () => {
+        props.addPost();
+    };
+
+    let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.addPost(text);
-        newPostElement.current.value = '';
+        props.updateNewPostChange(text);
     };
 
     return (
         <div className={s.content}>
             <div className={s.newPost}>
                 <img src='https://klike.net/uploads/posts/2019-06/1560664221_1.jpg' className={s.avatar}/>
-                <textarea className={s.input} ref={newPostElement} title='Что у вас нового?'
-                          aria-label='Что у вас нового?' placeholder='Что у вас нового?'>
-                </textarea>
+                <textarea onChange={onPostChange}
+                          className={s.input}
+                          ref={newPostElement}
+                          placeholder='Что у вас нового?' value={props.newPostText}/>
                 <button className={s.button} onClick={addPost}>
                     <i className="fa fa-paper-plane-o" aria-hidden="true"> </i>
                 </button>

@@ -1,8 +1,19 @@
 import * as serviceWorker from './serviceWorker';
-import {renderEnterTree} from "./render";
-import state from "./Redux/state";
+import store from "./Redux/state";
+import React from "react";
+import App from "./App";
+import ReactDOM from 'react-dom'
+import './Fonts/css/font-awesome.css';
 
-renderEnterTree(state);
+
+let renderEnterTree = () => {
+    ReactDOM.render(<App store={store.getState()} addPost={store.addPost.bind(store)}
+                         updateNewPostChange={store.updateNewPostChange.bind(store)}/>, document.getElementById('root'));
+};
+
+renderEnterTree(store.getState());
+
+store.subscribe(renderEnterTree);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
