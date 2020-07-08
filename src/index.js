@@ -7,8 +7,10 @@ import './Fonts/css/font-awesome.css';
 
 
 let renderEnterTree = () => {
-    ReactDOM.render(<App store={store.getState()} addPost={store.addPost.bind(store)}
-                         updateNewPostChange={store.updateNewPostChange.bind(store)}/>, document.getElementById('root'));
+    ReactDOM.render(<App
+        store={store}
+        dispatch={store.dispatch.bind(store)}
+    />, document.getElementById('root'));
 };
 
 renderEnterTree(store.getState());
