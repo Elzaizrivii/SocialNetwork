@@ -1,21 +1,20 @@
 import React from "react";
 import s from './ActiveDialog.module.css'
 import MessageItem from "./MessageItem/MessageItem";
-import {sendMessageCreator, updateNewMessageBody} from "../../../Redux/state";
 
 const ActiveDialog = (props) => {
 
-    let state = props.store.getState().dialogPage;
+    let state = props.dialogPage;
 
     let messageElements = state.messages.map(m => <MessageItem message={m.message}/>);
     let newMessageBody = state.newMessageBody;
 
     let onSandMessageClick = () => {
-        props.store.dispatch(sendMessageCreator());
+        props.sandMessage();
     };
     let onNewMessageChange = (e) => {
         let body = e.target.value;
-        props.store.dispatch(updateNewMessageBody(body));
+        props.updateNewMessageChange(body)
     };
     return (
         <div className={s.content}>

@@ -9,6 +9,7 @@ import Settings from "./Components/Settings/Settings";
 import News from "./Components/News/News";
 import Dialogs from "./Components/Dialogs/Dialogs";
 import ActiveDialog from "./Components/Dialogs/ActiveDialog/ActiveDialog";
+import ActiveDialogContainer from "./Components/Dialogs/ActiveDialog/ActiveDialogContainer";
 
 const App = (props) => {
 
@@ -20,8 +21,7 @@ const App = (props) => {
                     <Navbar/>
                     <Route exact path='/Profile' render={() =>
                         <Profile
-                            profilePage={props.state.profilePage}
-                            dispatch={props.dispatch}
+                            store={props.store}
                         />}
                     />
                     <Route exact path='/Dialogs' render={() =>
@@ -33,7 +33,7 @@ const App = (props) => {
                     <Route exact path='/Music' render={() => <Music/>}/>
                     <Route exact path='/Settings' render={() => <Settings/>}/>
                     <Route exact path={'/dialogs/1'} render={() =>
-                        <ActiveDialog
+                        <ActiveDialogContainer
                             store={props.store}
                         />}
                     />

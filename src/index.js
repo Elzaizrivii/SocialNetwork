@@ -1,5 +1,5 @@
 import * as serviceWorker from './serviceWorker';
-import store from "./Redux/state";
+import store from "./Redux/reduxStore";
 import React from "react";
 import App from "./App";
 import ReactDOM from 'react-dom'
@@ -16,7 +16,10 @@ let renderEnterTree = (state) => {
 
 renderEnterTree(store.getState());
 
-store.subscribe(renderEnterTree);
+store.subscribe(()=>{
+    let state = store.getState();
+    renderEnterTree(state);
+});
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

@@ -1,7 +1,6 @@
 import React from 'react';
 import Post from './Post/Post';
 import s from './MyPost.module.css';
-import {addPostActionCreator, updateNewPostText} from "../../../Redux/state";
 
 const MyPost = (props) => {
 
@@ -15,15 +14,13 @@ const MyPost = (props) => {
 
     let newPostElement = React.createRef();
 
-    let addPost = () => {
-        props.dispatch(addPostActionCreator());
+    let onAddPost = () => {
+        props.addPost(props.addPost);
     };
 
     let onPostChange = () => {
-        let newText = newPostElement.current.value;
-
-        let action = updateNewPostText(newText);
-        props.dispatch (action);
+        let action = newPostElement.current.value;
+        props.updateNewPostText(action);
     };
 
     return (
@@ -34,7 +31,7 @@ const MyPost = (props) => {
                           className={s.input}
                           ref={newPostElement}
                           placeholder='Что у вас нового?' value={props.newPostText}/>
-                <button className={s.button} onClick={addPost}>
+                <button className={s.button} onClick={onAddPost}>
                     <i className="fa fa-paper-plane-o" aria-hidden="true"> </i>
                 </button>
             </div>
