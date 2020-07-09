@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Header from './Components/Header/Header';
 import Navbar from './Components/Navbar/Navbar';
@@ -9,6 +8,7 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import Settings from "./Components/Settings/Settings";
 import News from "./Components/News/News";
 import Dialogs from "./Components/Dialogs/Dialogs";
+import ActiveDialog from "./Components/Dialogs/ActiveDialog/ActiveDialog";
 
 const App = (props) => {
 
@@ -20,18 +20,23 @@ const App = (props) => {
                     <Navbar/>
                     <Route exact path='/Profile' render={() =>
                         <Profile
-                            profilePage={props.store.profilePage}
+                            profilePage={props.state.profilePage}
                             dispatch={props.dispatch}
                         />}
                     />
                     <Route exact path='/Dialogs' render={() =>
                         <Dialogs
-                            state={props.store.dialogPage}
+                            store={props.store}
                         />}
                     />
                     <Route exact path='/News' render={() => <News/>}/>
                     <Route exact path='/Music' render={() => <Music/>}/>
                     <Route exact path='/Settings' render={() => <Settings/>}/>
+                    <Route exact path={'/dialogs/1'} render={() =>
+                        <ActiveDialog
+                            store={props.store}
+                        />}
+                    />
                 </div>
             </div>
         </BrowserRouter>

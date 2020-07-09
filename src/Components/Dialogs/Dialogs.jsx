@@ -2,9 +2,12 @@ import React from "react";
 import s from "./Dialogs.module.css";
 import DialogItem from "./DialogItem/DialogItem";
 
+
 const Dialogs = (props) => {
 
-    let dialogElements = props.state.dialogs.map(d => <DialogItem name={d.name} id={d.id} message={d.message}/>);
+    let state = props.store.getState().dialogPage;
+
+    let dialogElements = state.dialogs.map(d => <DialogItem name={d.name} id={d.id} message={d.message}/>);
 
     return (
         <div className={s.container}>

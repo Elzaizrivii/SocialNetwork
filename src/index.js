@@ -6,10 +6,11 @@ import ReactDOM from 'react-dom'
 import './Fonts/css/font-awesome.css';
 
 
-let renderEnterTree = () => {
+let renderEnterTree = (state) => {
     ReactDOM.render(<App
-        store={store}
+        state={state}
         dispatch={store.dispatch.bind(store)}
+        store={store}
     />, document.getElementById('root'));
 };
 
