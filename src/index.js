@@ -4,21 +4,21 @@ import React from "react";
 import App from "./App";
 import ReactDOM from 'react-dom'
 import './Fonts/css/font-awesome.css';
+import StoreContext from "./reactStoreContext";
+import {Provider} from 'react-redux';
 
 
-let renderEnterTree = (state) => {
-    ReactDOM.render(<App
-        state={state}
-        dispatch={store.dispatch.bind(store)}
-        store={store}
-    />, document.getElementById('root'));
+let renderEnterTree = () => {
+    ReactDOM.render(
+        <Provider store={store}>
+            <App/>
+        </Provider>, document.getElementById('root'));
 };
 
-renderEnterTree(store.getState());
+renderEnterTree();
 
 store.subscribe(()=>{
-    let state = store.getState();
-    renderEnterTree(state);
+    renderEnterTree();
 });
 
 // If you want your app to work offline and load faster, you can change

@@ -4,10 +4,8 @@ import MessageItem from "./MessageItem/MessageItem";
 
 const ActiveDialog = (props) => {
 
-    let state = props.dialogPage;
-
-    let messageElements = state.messages.map(m => <MessageItem message={m.message}/>);
-    let newMessageBody = state.newMessageBody;
+    let messageElements = props.dialogsPage.messages.map(m => <MessageItem message={m.message}/>);
+    let newMessageBody = props.dialogsPage.newMessageBody;
 
     let onSandMessageClick = () => {
         props.sandMessage();

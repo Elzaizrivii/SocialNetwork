@@ -1,6 +1,7 @@
 import React from 'react';
 import Post from './Post/Post';
 import s from './MyPost.module.css';
+import {updateNewPostText} from "../../../Redux/profileReducer";
 
 const MyPost = (props) => {
 
@@ -18,16 +19,16 @@ const MyPost = (props) => {
         props.addPost(props.addPost);
     };
 
-    let onPostChange = () => {
+    let updateNewPostText = () => {
         let action = newPostElement.current.value;
-        props.updateNewPostText(action);
+        props.onPostChange(action);
     };
 
     return (
         <div className={s.content}>
             <div className={s.newPost}>
                 <img src='https://klike.net/uploads/posts/2019-06/1560664221_1.jpg' className={s.avatar}/>
-                <textarea onChange={onPostChange}
+                <textarea onChange={updateNewPostText}
                           className={s.input}
                           ref={newPostElement}
                           placeholder='Что у вас нового?' value={props.newPostText}/>
