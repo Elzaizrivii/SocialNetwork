@@ -1,5 +1,6 @@
 import React from "react";
 import s from './Header.module.css';
+import {NavLink} from "react-router-dom";
 
 const Header = () => {
 
@@ -24,8 +25,12 @@ const Header = () => {
                 </div>
             </div>
             <div className={s.item}>
-                <div className={s.link}>item 1</div>
-                <div className={s.link}>item 2</div>
+                <NavLink to={'/users'} className={s.link}>
+                    <i className="fa fa-users" aria-hidden="true"> </i>
+                </NavLink>
+                <div className={s.link}>
+
+                </div>
                 <i className="fa fa-handshake-o" aria-hidden="true">
                 </i>
             </div>

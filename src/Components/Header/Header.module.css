@@ -41,7 +41,11 @@
 }
 
 .link {
-    color: #d3dadd
+    color: #d3dadd;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .item {

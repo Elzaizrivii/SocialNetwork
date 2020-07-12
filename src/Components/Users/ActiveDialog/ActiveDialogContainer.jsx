@@ -23,4 +23,5 @@ let mapDispatchToProps = (dispatch) => {
 
 const ActiveDialogContainer = connect(mapStateProps, mapDispatchToProps)(ActiveDialog);
 
+
 export default ActiveDialogContainer;

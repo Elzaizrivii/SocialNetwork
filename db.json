@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "followed": true,
+      "avatarUrl": "https://klike.net/uploads/posts/2019-06/1560664221_1.jpg",
+      "userName": "Пользователь 1",
+      "status": "Нет статуса",
+      "location": {
+        "country": "Россия",
+        "city": "Москва"
+      }
+    },
+    {
+      "id": 2,
+      "followed": false,
+      "avatarUrl": "https://klike.net/uploads/posts/2019-06/1560664221_1.jpg",
+      "userName": "Пользователь 2",
+      "status": "Не в сети",
+      "location": {
+        "country": "Украина",
+        "city": "Львов"
+      }
+    },
+    {
+      "id": 3,
+      "followed": true,
+      "avatarUrl": "https://klike.net/uploads/posts/2019-06/1560664221_1.jpg",
+      "userName": "Пользователь 3",
+      "status": "Онлайн",
+      "location": {
+        "country": "Молдова",
+        "city": "Кишенёв"
+      }
+    },
+    {
+      "id": 4,
+      "followed": false,
+      "avatarUrl": "https://klike.net/uploads/posts/2019-06/1560664221_1.jpg",
+      "userName": "Пользователь 4",
+      "status": "Peace",
+      "location": {
+        "country": "UK",
+        "city": "London"
+      }
+    },
+    {
+      "id": 5,
+      "followed": true,
+      "avatarUrl": "https://klike.net/uploads/posts/2019-06/1560664221_1.jpg",
+      "userName": "Пользователь 5",
+      "status": "Hello World",
+      "location": {
+        "country": "USA",
+        "city": "New-York"
+      }
+    }
+  ],
+  "hello": [
+    {"id":1,
+      "text": "message"
+    }
+  ]
+}

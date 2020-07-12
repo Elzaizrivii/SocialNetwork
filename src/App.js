@@ -4,16 +4,16 @@ import Header from './Components/Header/Header';
 import Navbar from './Components/Navbar/Navbar';
 import Profile from './Components/Profile/Profile';
 import Music from './Components/Music/Music';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import Settings from "./Components/Settings/Settings";
 import News from "./Components/News/News";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 import ActiveDialogContainer from "./Components/Dialogs/ActiveDialog/ActiveDialogContainer";
+import UsersContainer from "./Components/Users/UsersContainer";
 
-const App = (props) => {
+const App = () => {
 
     return (
-        <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
                 <div className='app-wrapper-content'>
@@ -30,9 +30,11 @@ const App = (props) => {
                     <Route exact path={'/dialogs/1'} render={() =>
                         <ActiveDialogContainer/>}
                     />
+                    <Route exact path={'/Users'} render={() =>
+                    <UsersContainer/>}
+                />
                 </div>
             </div>
-        </BrowserRouter>
     );
 };
 
