@@ -1,3 +1,6 @@
+body{
+    margin: 0;
+}
 .app-wrapper {
     display: flex;
     margin: 0 auto;

@@ -1,8 +1,16 @@
 import React from 'react';
 import Post from './Post/Post';
 import s from './MyPost.module.css';
+import * as axios from "axios";
 
 const MyPost = (props) => {
+
+    if (props.posts.length === 0) {
+
+        axios.get('http://localhost:3001/posts/').then(respons => {
+            props.setPosts(respons.data);
+        });
+    }
 
     let postsElement = props.posts.map(p =>
         <Post
