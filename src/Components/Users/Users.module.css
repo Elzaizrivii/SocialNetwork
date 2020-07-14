@@ -48,14 +48,18 @@
 .dialogsItems {
     display: flex;
     padding: 10px;
-    height: 71px;
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
 }
 
-.dialogsItems .hover {
-    color: gold;
+
+.item{
+    display: flex;
+    height: 80px;
+    padding:15px 0 15px 0;
+    border-bottom: #CCCCCC solid 1px;
+    align-items: center;
 }
 
 .dialog {
@@ -72,15 +76,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
     margin-right: 10px;
     font-size: 50px;
 }
 
-.message {
+.location{
     display: flex;
+    color: #CCCCCC;
+}
+
+.name{
+    color: #4d6da9;
+    font-style: inherit;
 }
 
 .info {
@@ -95,28 +105,27 @@
     color: grey;
 }
 
-.name {
-
-}
-
 a {
     text-decoration: none;
     color: #4d6da9;
 }
 
-textarea {
-    height: 50px;
-    width: 520px;
-}
-
 button {
     border-radius: 5px;
-    height: 40px;
+    height: 25px;
     width: 100px;
-    background-color: #F2F3F5;
+    background-color: #5181b8;
+    color: white;
     border: none;
 }
 
 button:hover {
-    background-color: #CCCCCC;
+    background-color: #5181b8;
+}
+.selected{
+    font-weight: bold;
+}
+span{
+    display: flex;
+    cursor: pointer;
 }

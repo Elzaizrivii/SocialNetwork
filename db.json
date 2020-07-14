@@ -54,12 +54,171 @@
         "country": "USA",
         "city": "New-York"
       }
-    }
-  ],
-  "hello": [
+    },
     {
-      "id": 1,
-      "text": "message"
+      "id": 6,
+      "followed": true,
+      "avatarUrl": "https://klike.net/uploads/posts/2019-06/1560664221_1.jpg",
+      "userName": "Пользователь 6",
+      "status": "Нет статуса",
+      "location": {
+        "country": "Россия",
+        "city": "Москва"
+      }
+    },
+    {
+      "id": 7,
+      "followed": false,
+      "avatarUrl": "https://klike.net/uploads/posts/2019-06/1560664221_1.jpg",
+      "userName": "Пользователь 7",
+      "status": "Не в сети",
+      "location": {
+        "country": "Украина",
+        "city": "Львов"
+      }
+    },
+    {
+      "id": 8,
+      "followed": true,
+      "avatarUrl": "https://klike.net/uploads/posts/2019-06/1560664221_1.jpg",
+      "userName": "Пользователь 8",
+      "status": "Онлайн",
+      "location": {
+        "country": "Молдова",
+        "city": "Кишенёв"
+      }
+    },
+    {
+      "id": 9,
+      "followed": false,
+      "avatarUrl": "https://klike.net/uploads/posts/2019-06/1560664221_1.jpg",
+      "userName": "Пользователь 9",
+      "status": "Peace",
+      "location": {
+        "country": "UK",
+        "city": "London"
+      }
+    },
+    {
+      "id": 10,
+      "followed": true,
+      "avatarUrl": "https://klike.net/uploads/posts/2019-06/1560664221_1.jpg",
+      "userName": "Пользователь 10",
+      "status": "Hello World",
+      "location": {
+        "country": "USA",
+        "city": "New-York"
+      }
+    },
+    {
+      "id": 11,
+      "followed": true,
+      "avatarUrl": "https://klike.net/uploads/posts/2019-06/1560664221_1.jpg",
+      "userName": "Пользователь 11",
+      "status": "Нет статуса",
+      "location": {
+        "country": "Россия",
+        "city": "Москва"
+      }
+    },
+    {
+      "id": 12,
+      "followed": false,
+      "avatarUrl": "https://klike.net/uploads/posts/2019-06/1560664221_1.jpg",
+      "userName": "Пользователь 12",
+      "status": "Не в сети",
+      "location": {
+        "country": "Украина",
+        "city": "Львов"
+      }
+    },
+    {
+      "id": 13,
+      "followed": true,
+      "avatarUrl": "https://klike.net/uploads/posts/2019-06/1560664221_1.jpg",
+      "userName": "Пользователь 13",
+      "status": "Онлайн",
+      "location": {
+        "country": "Молдова",
+        "city": "Кишенёв"
+      }
+    },
+    {
+      "id": 14,
+      "followed": false,
+      "avatarUrl": "https://klike.net/uploads/posts/2019-06/1560664221_1.jpg",
+      "userName": "Пользователь 14",
+      "status": "Peace",
+      "location": {
+        "country": "UK",
+        "city": "London"
+      }
+    },
+    {
+      "id": 15,
+      "followed": true,
+      "avatarUrl": "https://klike.net/uploads/posts/2019-06/1560664221_1.jpg",
+      "userName": "Пользователь 15",
+      "status": "Hello World",
+      "location": {
+        "country": "USA",
+        "city": "New-York"
+      }
+    },
+    {
+      "id": 16,
+      "followed": true,
+      "avatarUrl": "https://klike.net/uploads/posts/2019-06/1560664221_1.jpg",
+      "userName": "Пользователь 16",
+      "status": "Нет статуса",
+      "location": {
+        "country": "Россия",
+        "city": "Москва"
+      }
+    },
+    {
+      "id": 17,
+      "followed": false,
+      "avatarUrl": "https://klike.net/uploads/posts/2019-06/1560664221_1.jpg",
+      "userName": "Пользователь 17",
+      "status": "Не в сети",
+      "location": {
+        "country": "Украина",
+        "city": "Львов"
+      }
+    },
+    {
+      "id": 18,
+      "followed": true,
+      "avatarUrl": "https://klike.net/uploads/posts/2019-06/1560664221_1.jpg",
+      "userName": "Пользователь 18",
+      "status": "Онлайн",
+      "location": {
+        "country": "Молдова",
+        "city": "Кишенёв"
+      }
+    },
+    {
+      "id": 19,
+      "followed": false,
+      "avatarUrl": "https://klike.net/uploads/posts/2019-06/1560664221_1.jpg",
+      "userName": "Пользователь 19",
+      "status": "Peace",
+      "location": {
+        "country": "UK",
+        "city": "London"
+      }
+    },
+    {
+      "id": 20,
+      "followed": true,
+      "avatarUrl": "https://klike.net/uploads/posts/2019-06/1560664221_1.jpg",
+      "userName": "Пользователь 20",
+      "status": "Hello World",
+      "location": {
+        "country": "USA",
+        "city": "New-York"
+      }
     }
   ],
   "posts": [
