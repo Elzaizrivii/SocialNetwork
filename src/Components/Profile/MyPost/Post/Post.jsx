@@ -10,7 +10,7 @@ const Post = (props) => {
             <div className={s.header}>
                 <img src='https://klike.net/uploads/posts/2019-06/1560664221_1.jpg'/>
                 <div className={s.user}>
-                    <div className={s.name}>undefined</div>
+                    <div className={s.name}>{props.message}</div>
                     <div className={s.data}>{now}</div>
                 </div>
             </div>

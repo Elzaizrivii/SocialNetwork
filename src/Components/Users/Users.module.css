@@ -53,7 +53,10 @@
     width: 100%;
 }
 
-
+.link{
+    display: flex;
+    width: 100%;
+}
 .item{
     display: flex;
     height: 80px;

@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./Users.module.css";
 import undefinedAvatar from "../../Images/undefined-avatar.jpg";
+import {NavLink} from "react-router-dom";
 
 const Users = (props) => {
 
@@ -22,15 +23,17 @@ const Users = (props) => {
                 )}
                 <div className={s.dialogsItems}>
                     {props.users.map(u => <div className={s.item} key={u.id}>
-                        <img className={s.avatar} src={u.avatarUrl != null ? u.avatarUrl : undefinedAvatar}/>
-                        <div className={s.info}>
-                            <div className={s.name}>{u.userName}</div>
-                            <div>{u.status}</div>
-                            <div className={s.location}>
-                                <div>{u.location.city}</div>
-                                <div>{u.location.country}</div>
+                        <NavLink className={s.link} to={'/profile/' + u.id}>
+                            <img className={s.avatar} src={u.avatarUrl != null ? u.avatarUrl : undefinedAvatar}/>
+                            <div className={s.info}>
+                                <div className={s.name}>{u.userName}</div>
+                                <div>{u.status}</div>
+                                <div className={s.location}>
+                                    <div>{u.location.city}</div>
+                                    <div>{u.location.country}</div>
+                                </div>
                             </div>
-                        </div>
+                        </NavLink>
                         <div>
                             {u.followed ?
                                 <button onClick={() => {

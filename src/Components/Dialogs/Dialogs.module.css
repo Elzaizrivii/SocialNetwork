@@ -2,6 +2,7 @@
     display: flex;
     background-color: #e9ebee;
     padding-top: 10px;
+    color: #1c1e21;
 }
 
 .sidebar {
@@ -81,6 +82,7 @@
 
 .message {
     display: flex;
+    color: #1c1e21;
 }
 
 .info {

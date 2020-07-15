@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import Header from './Components/Header/Header';
 import Navbar from './Components/Navbar/Navbar';
-import Profile from './Components/Profile/Profile';
 import Music from './Components/Music/Music';
 import {Route} from 'react-router-dom';
 import Settings from "./Components/Settings/Settings";
@@ -10,6 +9,7 @@ import News from "./Components/News/News";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 import ActiveDialogContainer from "./Components/Dialogs/ActiveDialog/ActiveDialogContainer";
 import UsersContainer from "./Components/Users/UsersContainer";
+import ProfileContainer from "./Components/Profile/ProfileContainer";
 
 const App = () => {
 
@@ -18,21 +18,21 @@ const App = () => {
                 <Header/>
                 <div className='app-wrapper-content'>
                     <Navbar/>
-                    <Route exact path='/Profile' render={() =>
-                        <Profile/>}
+                    <Route path='/profile/:id?' render={() =>
+                        <ProfileContainer/>}
                     />
-                    <Route exact path='/Dialogs' render={() =>
+                    <Route path='/dialogs' render={() =>
                         <DialogsContainer/>}
                     />
-                    <Route exact path='/News' render={() => <News/>}/>
-                    <Route exact path='/Music' render={() => <Music/>}/>
-                    <Route exact path='/Settings' render={() => <Settings/>}/>
-                    <Route exact path={'/dialogs/1'} render={() =>
+                    <Route path='/News' render={() => <News/>}/>
+                    <Route path='/Music' render={() => <Music/>}/>
+                    <Route path='/Settings' render={() => <Settings/>}/>
+                    <Route path='/dialogs/active/:id?' render={() =>
                         <ActiveDialogContainer/>}
                     />
-                    <Route exact path={'/Users'} render={() =>
-                    <UsersContainer/>}
-                />
+                    <Route path='/Users' render={() =>
+                        <UsersContainer/>}
+                    />
                 </div>
             </div>
     );
