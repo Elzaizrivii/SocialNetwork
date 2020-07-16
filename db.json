@@ -294,5 +294,27 @@
         "github": ""
       }
     }
+  ],
+  "auth": [
+    {
+      "id": 1,
+      "resultCode": 0,
+      "messages": {},
+      "data": {
+        "id": 1,
+        "login": "Admin",
+        "email": "admin@mail.com"
+      }
+    }
+  ],
+  "follow": [
+    {
+      "id": 1,
+      "resultCode": 1,
+      "messages": [
+        "something wrong"
+      ],
+      "data": {}
+    }
   ]
 }

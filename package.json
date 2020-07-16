@@ -9,6 +9,7 @@
     "axios": "^0.19.2",
     "concurrently": "^5.2.0",
     "font-awesome": "^4.7.0",
+    "json-server-auth": "^2.0.2",
     "npm-run-all": "^4.1.5",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",

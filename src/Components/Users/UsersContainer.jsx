@@ -16,7 +16,8 @@ class UsersContainer extends React.Component {
 
     componentDidMount() {
         this.props.setIsFetching(true);
-        axios.get(`http://localhost:3001/users?_page=${this.props.currentPage}&_limit=${this.props.pageSize}`).then(respons => {
+        axios.get(`http://localhost:3001/users?_page=${this.props.currentPage}&_limit=${this.props.pageSize}`,
+            {withCredentials: true}).then(respons => {
             this.props.setUsers(respons.data);
             this.props.setIsFetching(false);
             this.props.setTotalUserCountPage(respons.headers['x-total-count']);
@@ -26,7 +27,8 @@ class UsersContainer extends React.Component {
     onPageChange = (pageNumber) => {
         this.props.setIsFetching(true);
         this.props.setCurrentPage(pageNumber);
-        axios.get(`http://localhost:3001/users?_page=${pageNumber}&_limit=${this.props.pageSize}`).then(respons => {
+        axios.get(`http://localhost:3001/users?_page=${pageNumber}&_limit=${this.props.pageSize}`,
+            {withCredentials: true}).then(respons => {
             this.props.setUsers(respons.data);
             this.props.setIsFetching(false)
         });

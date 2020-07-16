@@ -2,6 +2,7 @@ import React from "react";
 import s from "./Users.module.css";
 import undefinedAvatar from "../../Images/undefined-avatar.jpg";
 import {NavLink} from "react-router-dom";
+import * as axios from "axios";
 
 const Users = (props) => {
 
@@ -17,7 +18,7 @@ const Users = (props) => {
         <div className={s.container}>
             <div className={s.dialogs}>
                 {pages.map(p =>
-                    <span onClick={(e) => {
+                    <span key={props.users.id} onClick={(e) => {
                         props.onPageChange(p);
                     }} className={props.currentPage === p && s.selected}>{p}</span>
                 )}
@@ -37,11 +38,27 @@ const Users = (props) => {
                         <div>
                             {u.followed ?
                                 <button onClick={() => {
-                                    props.unFollow(u.id)
-                                }}>Подписаться</button> :
+
+                                    axios.post(`http://localhost:3001/follow/${u.id}`, {}, {
+                                        withCredentials: true,
+                                        headers: {"API-KEY": ""}
+                                    }).then(respons => {
+
+                                        if (respons.data.resultCode === 0) {
+                                            props.unFollow(u.id);
+                                        }
+                                    });
+                                }}>Отписаться</button> :
                                 <button onClick={() => {
-                                    props.follow(u.id)
-                                }}>Отписаться</button>}
+                                    axios.delete(`http://localhost:3001/follow/${u.id}`, {
+                                        withCredentials: true,
+                                        headers: {"API-KEY": ""}
+                                    }).then(respons => {
+                                        if (respons.data.resultCode === 0) {
+                                            props.follow(u.id)
+                                        }
+                                    });
+                                }}>Подписаться</button>}
                         </div>
                     </div>)}
                 </div>

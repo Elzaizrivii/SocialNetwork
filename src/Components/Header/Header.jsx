@@ -2,7 +2,7 @@ import React from "react";
 import s from './Header.module.css';
 import {NavLink} from "react-router-dom";
 
-const Header = () => {
+const Header = (props) => {
 
     let newRequest = React.createRef();
 
@@ -28,11 +28,9 @@ const Header = () => {
                 <NavLink to={'/users'} className={s.link}>
                     <i className="fa fa-users" aria-hidden="true"> </i>
                 </NavLink>
-                <div className={s.link}>
-
-                </div>
-                <i className="fa fa-handshake-o" aria-hidden="true">
-                </i>
+                {props.isAuth ? props.login :  <NavLink to={'/login'}>
+                    Войти
+                </NavLink>}
             </div>
         </div>
     );

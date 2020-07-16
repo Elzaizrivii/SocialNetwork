@@ -12,7 +12,6 @@ let initState = {
     currentPage: 1,
     isFetching: false
 };
-console.log(initState);
 
 export const usersReducer = (state = initState, action) => {
     switch (action.type) {
