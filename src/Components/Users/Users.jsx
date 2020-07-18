@@ -2,7 +2,6 @@ import React from "react";
 import s from "./Users.module.css";
 import undefinedAvatar from "../../Images/undefined-avatar.jpg";
 import {NavLink} from "react-router-dom";
-import {usersApi} from "../../Api/api";
 
 const Users = (props) => {
 
@@ -38,36 +37,19 @@ const Users = (props) => {
                         <div>
                             {u.followed ?
 
-                                // данные запросов для кнопок захардкоженны в БД из за server-json
                                 <button
-
-                                    disabled={props.followInProgress.some}
                                     // TODO выскакивает ошибка
-                                    // .some(id => id === u.id)
+                                    // disabled={props.followInProgress.some(id=>id === u.id)}
+
                                     onClick={() => {
-
-                                        props.followInProgress(true, u.id);
-                                        usersApi.getFollow(u.id).then(data => {
-
-                                            if (data.resultCode === 0) {
-
-                                                props.follow(u.id);
-                                            }
-                                            props.followInProgress(false, u.id);
-                                        });
+                                        props.getFollow(u.id);
                                     }}>Подписаться</button> :
                                 <button
-                                    disabled={props.followInProgress.some}
-                                    // .some(id => id === u.id)
-                                    onClick={() => {
-                                        props.followInProgress(true, u.id);
-                                        usersApi.getUnFollow(u.id).then(data => {
-                                            if (data.resultCode === 0) {
+                                    // TODO выскакивает ошибка
+                                    // disabled={props.followInProgress.some(id=>id === u.id)}
 
-                                                props.unFollow(u.id)
-                                            }
-                                            props.followInProgress(false, u.id);
-                                        });
+                                    onClick={() => {
+                                       props.getUnFollow(u.id)
                                     }}>Отписаться</button>}
                         </div>
                     </div>)}

@@ -18,7 +18,7 @@ const Header = (props) => {
                 </i>
             </div>
             <div className={s.search}>
-                <input type='text' placeholder='Search' ref={newRequest} className={s.searchInput}>
+                <input type='text' placeholder='Найти...' ref={newRequest} className={s.searchInput}>
                 </input>
                 <div className={s.searchButton} onClick={search}>
                     <i className="fa fa-search" aria-hidden="true"> </i>
@@ -28,7 +28,6 @@ const Header = (props) => {
                 <NavLink to={'/users'} className={s.link}>
                     <i className="fa fa-users" aria-hidden="true"> </i>
                 </NavLink>
-                {/* данные запросов для кнопок захардкоженны в БД из за server-json*/}
                 {props.isAuth ? props.login :  <NavLink to={'/login'}>
                     Войти
                 </NavLink>}

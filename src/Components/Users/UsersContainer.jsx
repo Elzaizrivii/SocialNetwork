@@ -2,35 +2,22 @@ import React from "react";
 import {connect} from "react-redux";
 import {
     follow,
-    followInProgress,
+    followInProgress, getFollow, getUnFollow, getUsers,
     setCurrentPage,
-    setIsFetching,
-    setTotalUserCountPage,
-    setUsers,
-    unFollow
+    unFollow,
 } from "../../Redux/usersReducer";
 import Users from "./Users";
 import {Preloader} from "../common/preloader/Preloader";
-import {usersApi} from "../../Api/api";
 
 class UsersContainer extends React.Component {
 
     componentDidMount() {
-        this.props.setIsFetching(true);
-        usersApi.getUsers(this.props.currentPage,this.props.pageSize).then(response => {
-            this.props.setUsers(response.data);
-            this.props.setIsFetching(false);
-            this.props.setTotalUserCountPage(response.headers['x-total-count']);
-        });
+        this.props.getUsers(this.props.currentPage, this.props.pageSize);
     }
 
     onPageChange = (pageNumber) => {
-        this.props.setIsFetching(true);
         this.props.setCurrentPage(pageNumber);
-        usersApi.getUsers(pageNumber,this.props.pageSize).then(response => {
-            this.props.setUsers(response.data);
-            this.props.setIsFetching(false)
-        });
+        this.props.getUsers(this.props.currentPage, this.props.pageSize);
     };
 
     render() {
@@ -44,7 +31,9 @@ class UsersContainer extends React.Component {
                 users={this.props.users}
                 follow={this.props.follow}
                 unFollow={this.props.unFollow}
-                followInProgress = {this.props.followInProgress}
+                followInProgress={this.props.followInProgress}
+                getFollow={this.props.getFollow}
+                getUnFollow={this.props.getUnFollow}
             />;
         </>
     }
@@ -65,9 +54,9 @@ let mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
     follow,
     unFollow,
-    setUsers,
     setCurrentPage,
-    setTotalUserCountPage,
-    setIsFetching,
-    followInProgress
+    followInProgress,
+    getUsers,
+    getFollow,
+    getUnFollow
 })(UsersContainer);

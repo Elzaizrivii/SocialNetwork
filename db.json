@@ -1,6 +1,10 @@
 {
   "follow": {
-    "data": {},
+    "data": {
+      "id": "",
+      "login": "",
+      "email": ""
+    },
     "resultCode": 1,
     "messages": "message"
   },
