@@ -1,4 +1,18 @@
 {
+  "follow": {
+    "data": {},
+    "resultCode": 1,
+    "messages": "message"
+  },
+  "auth": {
+    "resultCode": 0,
+    "messages": {},
+    "data": {
+      "id": 1,
+      "login": "Admin",
+      "email": "admin@mail.com"
+    }
+  },
   "users": [
     {
       "id": 1,
@@ -293,28 +307,6 @@
         "vk": "",
         "github": ""
       }
-    }
-  ],
-  "auth": [
-    {
-      "id": 1,
-      "resultCode": 0,
-      "messages": {},
-      "data": {
-        "id": 1,
-        "login": "Admin",
-        "email": "admin@mail.com"
-      }
-    }
-  ],
-  "follow": [
-    {
-      "id": 1,
-      "resultCode": 1,
-      "messages": [
-        "something wrong"
-      ],
-      "data": {}
     }
   ]
 }

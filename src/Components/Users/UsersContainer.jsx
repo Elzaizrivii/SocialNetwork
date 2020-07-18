@@ -2,34 +2,33 @@ import React from "react";
 import {connect} from "react-redux";
 import {
     follow,
+    followInProgress,
     setCurrentPage,
     setIsFetching,
     setTotalUserCountPage,
     setUsers,
     unFollow
 } from "../../Redux/usersReducer";
-import * as axios from "axios";
 import Users from "./Users";
 import {Preloader} from "../common/preloader/Preloader";
+import {usersApi} from "../../Api/api";
 
 class UsersContainer extends React.Component {
 
     componentDidMount() {
         this.props.setIsFetching(true);
-        axios.get(`http://localhost:3001/users?_page=${this.props.currentPage}&_limit=${this.props.pageSize}`,
-            {withCredentials: true}).then(respons => {
-            this.props.setUsers(respons.data);
+        usersApi.getUsers(this.props.currentPage,this.props.pageSize).then(response => {
+            this.props.setUsers(response.data);
             this.props.setIsFetching(false);
-            this.props.setTotalUserCountPage(respons.headers['x-total-count']);
+            this.props.setTotalUserCountPage(response.headers['x-total-count']);
         });
     }
 
     onPageChange = (pageNumber) => {
         this.props.setIsFetching(true);
         this.props.setCurrentPage(pageNumber);
-        axios.get(`http://localhost:3001/users?_page=${pageNumber}&_limit=${this.props.pageSize}`,
-            {withCredentials: true}).then(respons => {
-            this.props.setUsers(respons.data);
+        usersApi.getUsers(pageNumber,this.props.pageSize).then(response => {
+            this.props.setUsers(response.data);
             this.props.setIsFetching(false)
         });
     };
@@ -45,6 +44,7 @@ class UsersContainer extends React.Component {
                 users={this.props.users}
                 follow={this.props.follow}
                 unFollow={this.props.unFollow}
+                followInProgress = {this.props.followInProgress}
             />;
         </>
     }
@@ -57,7 +57,8 @@ let mapStateToProps = (state) => {
         pageSize: state.usersPage.pageSize,
         totalCount: state.usersPage.totalCount,
         currentPage: state.usersPage.currentPage,
-        isFetching: state.usersPage.isFetching
+        isFetching: state.usersPage.isFetching,
+        followInProgress: state.usersPage.followInProgress
     }
 };
 
@@ -67,5 +68,6 @@ export default connect(mapStateToProps, {
     setUsers,
     setCurrentPage,
     setTotalUserCountPage,
-    setIsFetching
+    setIsFetching,
+    followInProgress
 })(UsersContainer);

@@ -28,6 +28,7 @@ const Header = (props) => {
                 <NavLink to={'/users'} className={s.link}>
                     <i className="fa fa-users" aria-hidden="true"> </i>
                 </NavLink>
+                {/* данные запросов для кнопок захардкоженны в БД из за server-json*/}
                 {props.isAuth ? props.login :  <NavLink to={'/login'}>
                     Войти
                 </NavLink>}
