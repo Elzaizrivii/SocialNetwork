@@ -1,9 +1,9 @@
 import React from "react";
 import Profile from "./Profile";
-import * as axios from "axios";
 import {connect} from "react-redux";
-import {setProfileUsers} from "../../Redux/profileReducer";
+import {getProfile, setProfileUsers} from "../../Redux/profileReducer";
 import {withRouter} from "react-router-dom";
+import {usersApi} from "../../Api/api";
 
 class ProfileContainer extends React.Component {
 
@@ -13,9 +13,7 @@ class ProfileContainer extends React.Component {
             id=1
         }
 
-        axios.get(`http://localhost:3001/profile/`+id).then(respons => {
-            this.props.setProfileUsers(respons.data);
-        });
+        this.props.getProfile(id)
     }
 
     render() {
@@ -31,4 +29,4 @@ let mapStateToProps = (state)=>({
 
 let withUrl = withRouter(ProfileContainer);
 
-export default connect(mapStateToProps,{setProfileUsers}) (withUrl);
+export default connect(mapStateToProps,{setProfileUsers,getProfile}) (withUrl);

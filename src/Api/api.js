@@ -30,5 +30,12 @@ export const usersApi = {
         return instance.delete(`follow/`+id).then(response => {
             return response.data
         })
+    },
+
+    getProfile(id){
+        return instance.get(`profile/`+id).then(response =>{
+            return response.data
+            }
+        )
     }
 };
