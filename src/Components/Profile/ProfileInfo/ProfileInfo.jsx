@@ -1,6 +1,7 @@
 import React from "react";
 import s from './ProfileInfo.module.css';
 import {Preloader} from "../../common/preloader/Preloader";
+import ProfileStatus from "../ProfileStatus";
 
 const ProfileInfo = (props) => {
     if(!props.profile){
@@ -20,6 +21,7 @@ const ProfileInfo = (props) => {
                     Изменить информацию
                 </div>
             </div>
+            <ProfileStatus status={"Привет мой дружаня)"}/>
         </div>
     );
 };
