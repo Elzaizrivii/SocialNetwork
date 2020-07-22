@@ -27,15 +27,29 @@ export const usersApi = {
     },
     getUnFollow(id) {
 
-        return instance.delete(`follow/`+id).then(response => {
+        return instance.delete(`follow/` + id).then(response => {
             return response.data
         })
     },
 
-    getProfile(id){
-        return instance.get(`profile/`+id).then(response =>{
-            return response.data
-            }
-        )
+    getProfile(id) {
+        return profileApi.getProfile(id)
+    }
+};
+export const profileApi = {
+    getProfile(id) {
+
+        return instance.get(`profile/` + id)
+    },
+
+
+    getStatus(id) {
+
+        return instance.get(`status/` + id)
+    },
+
+    updateStatus(status) {
+        // TODO id захардкожен так как ругается json-server =(
+        return instance.put(`status/2`, {status})
     }
 };
