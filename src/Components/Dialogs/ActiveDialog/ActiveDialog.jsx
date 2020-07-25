@@ -1,19 +1,35 @@
 import React from "react";
 import s from './ActiveDialog.module.css'
 import MessageItem from "./MessageItem/MessageItem";
+import {Field, reduxForm} from "redux-form";
 
 const ActiveDialog = (props) => {
 
     let messageElements = props.dialogsPage.messages.map(m => <MessageItem message={m.message}/>);
-    let newMessageBody = props.dialogsPage.newMessageBody;
 
-    let onSandMessageClick = () => {
-        props.sandMessage();
+    let addNewMessage = (values) => {
+        props.sandMessage(values.newMessageBody);
     };
-    let onNewMessageChange = (e) => {
-        let body = e.target.value;
-        props.updateNewMessageChange(body)
+
+    const ActiveDialogForm = (props) => {
+        return (
+            <form onSubmit={props.handleSubmit}>
+                <Field
+                    className={s.input}
+                    placeholder='Напишите сообщение'
+                    name="newMessageBody"
+                    component='textarea'/>
+                <button className={s.button}>
+                    <i className="fa fa-paper-plane-o" aria-hidden="true"> </i>
+                </button>
+            </form>
+        )
     };
+
+    const ActiveDialogReduxForm = reduxForm({
+        form: 'ActiveDialogForm'
+    })(ActiveDialogForm);
+
     return (
         <div className={s.content}>
             <div className={s.messageList}>
@@ -23,15 +39,7 @@ const ActiveDialog = (props) => {
             </div>
             <div className={s.newMessage}>
                 <img src='https://klike.net/uploads/posts/2019-06/1560664221_1.jpg' className={s.avatar}/>
-                <textarea
-                    onChange={onNewMessageChange}
-                    className={s.input}
-                    placeholder='Напишите сообщение'
-                    value={newMessageBody}/>
-                <button className={s.button}
-                        onClick={onSandMessageClick}>
-                    <i className="fa fa-paper-plane-o" aria-hidden="true"> </i>
-                </button>
+                <ActiveDialogReduxForm onSubmit={addNewMessage}/>
             </div>
         </div>
     );

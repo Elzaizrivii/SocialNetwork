@@ -1,5 +1,5 @@
 import React from "react";
-import {sendMessageCreator, updateNewMessageBody} from "../../../Redux/dialogsReducer";
+import {sendMessageCreator} from "../../../Redux/dialogsReducer";
 import ActiveDialog from "./ActiveDialog";
 import {connect} from "react-redux";
 
@@ -12,15 +12,10 @@ let mapStateProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        sandMessage: () => {
-            dispatch(sendMessageCreator());
+        sandMessage: (newMessageBody) => {
+            dispatch(sendMessageCreator(newMessageBody));
         },
-        updateNewMessageChange: (body) => {
-            dispatch(updateNewMessageBody(body));
-        }
     };
 };
 
-const ActiveDialogContainer = connect(mapStateProps, mapDispatchToProps)(ActiveDialog);
-
-export default ActiveDialogContainer;
+export default connect(mapStateProps, mapDispatchToProps)(ActiveDialog);

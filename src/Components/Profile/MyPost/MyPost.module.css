@@ -8,6 +8,11 @@
     border-radius: 10px;
 }
 
+.form {
+    display: flex;
+    flex-grow: 1;
+}
+
 .newPost {
     display: flex;
     background-color: white;
